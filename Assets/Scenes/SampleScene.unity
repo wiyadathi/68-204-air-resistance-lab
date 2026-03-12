@@ -147,8 +147,8 @@ Transform:
   m_GameObject: {fileID: 101250110}
   serializedVersion: 2
   m_LocalRotation: {x: -0.63784343, y: 0.30521443, z: 0.30521443, w: 0.63784343}
-  m_LocalPosition: {x: -0.02, y: -0.12051023, z: 0.623}
-  m_LocalScale: {x: 0.49618995, y: 0.49618983, z: 0.29303116}
+  m_LocalPosition: {x: -0.0690459, y: 0.0059057786, z: 0.6515499}
+  m_LocalScale: {x: 0.49618995, y: 0.49618983, z: 0.29303113}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1656655449}
@@ -372,8 +372,8 @@ Transform:
   m_GameObject: {fileID: 273522336}
   serializedVersion: 2
   m_LocalRotation: {x: -0.63784343, y: 0.30521443, z: 0.30521443, w: 0.63784343}
-  m_LocalPosition: {x: 0.578, y: -0.121, z: -0.105}
-  m_LocalScale: {x: 0.49618995, y: 0.49618983, z: 0.29303116}
+  m_LocalPosition: {x: 0.50814056, y: 0.0059057786, z: -0.06486897}
+  m_LocalScale: {x: 0.49618995, y: 0.49618983, z: 0.29303113}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1656655449}
@@ -797,7 +797,7 @@ Transform:
   m_GameObject: {fileID: 1141356336}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6378433, y: 0.30521443, z: 0.30521443, w: 0.63784343}
-  m_LocalPosition: {x: -0.101886146, y: 0.06496197, z: -0.01699078}
+  m_LocalPosition: {x: -0.05, y: 0.065, z: 0.025}
   m_LocalScale: {x: 3.8096998, y: 0.19999997, z: 0.29528123}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1006,6 +1006,7 @@ GameObject:
   - component: {fileID: 1656655452}
   - component: {fileID: 1656655451}
   - component: {fileID: 1656655450}
+  - component: {fileID: 1656655454}
   m_Layer: 0
   m_Name: Airplane
   m_TagString: Untagged
@@ -1022,7 +1023,7 @@ Transform:
   m_GameObject: {fileID: 1656655448}
   serializedVersion: 2
   m_LocalRotation: {x: 0.63784343, y: -0.30521443, z: -0.30521443, w: 0.63784343}
-  m_LocalPosition: {x: 0.09069002, y: -1.02, z: -4.21}
+  m_LocalPosition: {x: 0.09069002, y: -2.32, z: -4.21}
   m_LocalScale: {x: 1, y: 1.6933006, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1139,6 +1140,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656655448}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1656655454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656655448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a2bb6005b740a4c928d256ab8bf6cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Airplane
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
