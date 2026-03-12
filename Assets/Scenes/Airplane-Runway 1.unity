@@ -1006,6 +1006,7 @@ GameObject:
   - component: {fileID: 1656655452}
   - component: {fileID: 1656655451}
   - component: {fileID: 1656655450}
+  - component: {fileID: 1656655454}
   m_Layer: 0
   m_Name: Airplane
   m_TagString: Untagged
@@ -1139,6 +1140,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656655448}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1656655454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656655448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32a2bb6005b740a4c928d256ab8bf6cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Airplane
+  rb: {fileID: 0}
+  thrustPower: 2000
+  pitchSpeed: 100
+  rollSpeed: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
