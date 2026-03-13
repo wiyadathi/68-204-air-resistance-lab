@@ -3,11 +3,14 @@ using UnityEngine.InputSystem; // 1. ����������� Namespace
 
 public class Airplane : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float thrustPower = 1000f;
-    public float pitchSpeed = 50f;
-    public float rollSpeed = 100f;
+    private float liftForce;
 
+    public Rigidbody rb;
+    public float thrustPower = 100f;
+    public float liftCoefficient = 0.2f;
+    public float pitchSpeed = 20f;
+    public float rollSpeed = 100f;
+    public float pitchLiftBooster = 0.2f; // "แรงยกเสริม" เมื่อเชิดหัว (The "Pitch-Lift" Boost)
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -17,17 +20,17 @@ public class Airplane : MonoBehaviour
 
     void FixedUpdate()
     {
-        // ��Ҷ֧��������µç (����ͧ Setup � Inspector)
+        // เข้าถึงคีย์บอร์ดโดยตรง
         Keyboard kb = Keyboard.current;
-        if (kb == null) return; // �ѹ Error �ó�����դ������
+        if (kb == null) return; // กัน Error กรณีไม่มีคีย์บอร์ด
 
-        // 1. �к��ç��ѡ (Spacebar)
+        // 1. ระบบแรงผลัก (Spacebar) ผลักเครื่องบินไปข้างหน้า
         if (kb.spaceKey.isPressed)
         {
             rb.AddRelativeForce(Vector3.forward * thrustPower);
         }
 
-        // 2. �к���ع (Pitch: W/S, Roll: A/D)
+        // 2. ระบบหมุน (Pitch: W/S, Roll: A/D)
         float pitch = 0;
         float roll = 0;
 
@@ -36,14 +39,22 @@ public class Airplane : MonoBehaviour
         if (kb.aKey.isPressed) roll = 1;
         if (kb.dKey.isPressed) roll = -1;
 
-        // ����ç��ع (Torque)
+        // ใส่แรงหมุน (Torque)
         rb.AddRelativeTorque(new Vector3(pitch * pitchSpeed, 0, roll * rollSpeed) * Time.fixedDeltaTime, ForceMode.Acceleration);
 
-        // 3. �к��ç¡ (����͹���)
+        // 3. ระบบแรงยก (เหมือนเดิม)
         float forwardSpeed = Vector3.Dot(rb.linearVelocity, transform.forward);
-        if (forwardSpeed > 0)
+        if (forwardSpeed > 5f)
         {
-            rb.AddRelativeForce(Vector3.up * (Mathf.Pow(forwardSpeed, 2) * 0.5f));
+            liftForce = Mathf.Pow(forwardSpeed, 2) * liftCoefficient;
+
+            float angleOfAttack = transform.forward.y;
+            if (angleOfAttack > 0)
+            {
+                liftForce += forwardSpeed * angleOfAttack * pitchLiftBooster * 100f;
+            }
+
+            rb.AddForce(Vector3.up * liftForce, ForceMode.Acceleration); // ใข้แกนโลก
         }
     }
 }
