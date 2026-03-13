@@ -881,6 +881,84 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141356336}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1171696864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1171696865}
+  - component: {fileID: 1171696867}
+  - component: {fileID: 1171696866}
+  m_Layer: 0
+  m_Name: AirplaneRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1171696865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171696864}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.12262, y: -3, z: 2.91875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1656655449}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171696866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171696864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117d5a158b16a41489b655e948cd54b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AirplaneController2
+  thrust: 30
+  liftCoefficient: 0.02
+  dragCoefficient: 0.02
+  pitchPower: 15
+  rollPower: 10
+--- !u!54 &1171696867
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171696864}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0.2
+  m_AngularDamping: 1
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 96
+  m_CollisionDetection: 1
 --- !u!1 &1524938938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,8 +1083,6 @@ GameObject:
   - component: {fileID: 1656655453}
   - component: {fileID: 1656655452}
   - component: {fileID: 1656655451}
-  - component: {fileID: 1656655450}
-  - component: {fileID: 1656655455}
   m_Layer: 0
   m_Name: Airplane
   m_TagString: Untagged
@@ -1022,44 +1098,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656655448}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.63784343, y: -0.30521443, z: -0.30521443, w: 0.63784343}
-  m_LocalPosition: {x: 0.09069002, y: -2.32, z: -4.21}
-  m_LocalScale: {x: 1, y: 1.6933006, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.03193, y: 0.68000007, z: -7.12875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1141356337}
   - {fileID: 1524938939}
   - {fileID: 273522337}
   - {fileID: 101250111}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 38.857, y: -90, z: -90}
---- !u!54 &1656655450
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656655448}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 2
-  m_AngularDamping: 15
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 96
-  m_CollisionDetection: 1
+  m_Father: {fileID: 1171696865}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!136 &1656655451
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1140,22 +1189,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656655448}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1656655455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656655448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7527e4881a820d642a61a96db04c1c97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AirplaneController
-  thrustPower: 100
-  liftCoefficient: 10
-  pitchSpeed: 30
-  rollSpeed: 40
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1164,4 +1197,4 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 268849867}
-  - {fileID: 1656655449}
+  - {fileID: 1171696865}
