@@ -4,8 +4,8 @@ using UnityEngine.InputSystem; // 1. ����������� Namespace
 public class Airplane : MonoBehaviour
 {
     public Rigidbody rb;
-    public float thrustPower = 2000f;
-    public float pitchSpeed = 100f;
+    public float thrustPower = 1000f;
+    public float pitchSpeed = 50f;
     public float rollSpeed = 100f;
 
     void Start()
