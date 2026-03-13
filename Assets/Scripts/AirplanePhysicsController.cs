@@ -31,7 +31,8 @@ public class AirplanePhysicsController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         // ทำให้เครื่องบินเสถียร
-        rb.centerOfMass = new Vector3(0, -0.5f, 0);
+        // rb.centerOfMass = new Vector3(0, -0.5f, 0);
+        rb.centerOfMass = new Vector3(0, -0.6f, -0.2f);
     }
 
     void FixedUpdate()
